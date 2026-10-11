@@ -14,190 +14,228 @@ body{font-family:'Inter',sans-serif;color:#1a1d21}
 </style>
 </head>
 <body class="bg-[#fcfcfc] overflow-x-hidden" data-llama-id="10">
-
-<!-- ================= SHARED HEADER (injected) ================= -->
-<div id="site-header"></div>
-<!-- ============================================================ -->
+<!-- NAV -->
+<nav class="bg-[#f9f7f5] border-b border-[#e8e4e0] sticky top-0 z-50" data-llama-id="11">
+<div class="max-w-[1400px] mx-auto px-4 lg:px-8 py-3 flex items-center justify-between" data-llama-id="12">
+<div class="flex items-center gap-3" data-llama-id="13">
+<div class="text-[40px] font-bold leading-none tracking-tighter flex items-center" data-llama-id="14">
+<span class="text-[#1a1d21] flex items-center" data-llama-id="15">
+  <!-- FIXED HEADER LOGO: Updated src to relative path, added filter to invert light gray to dark -->
+  <img src="asa_logo.jpg" alt="ASA Logo" class="h-7 w-auto object-contain" style="filter: invert(1);" data-llama-id="16">
+</span>
+</div>
+<div class="leading-tight hidden sm:block" data-llama-id="18">
+<div class="text-[11px] tracking-[0.24em] font-semibold text-[#1a1d21]" data-llama-id="19">Aravind Associates</div>
+<div class="text-[7px] tracking-[0.18em] text-[#6b6f73]" data-llama-id="20">SPACES FOR A BETTER TOMORROW</div>
+</div>
+</div>
+<div class="hidden lg:flex items-center gap-8 text-[10px] tracking-widest font-medium text-[#2b2e33]" data-llama-id="21">
+<a href="#" class="border-b border-[#1a1d21] pb-1" data-llama-id="22">Home</a>
+<a href="#about" class="hover:text-black" data-llama-id="23">About</a>
+<div class="relative group" data-llama-id="24">
+  <a href="#projects" class="hover:text-black flex items-center gap-1" data-llama-id="25">Projects <i class="fa-solid fa-chevron-down text-[7px] mt-0.5"></i></a>
+  <div class="absolute left-0 top-full mt-1 w-56 bg-white border border-[#e8e4e0] shadow-lg py-2 hidden group-hover:block z-50" data-llama-id="26">
+    <a href="#" class="block px-4 py-1.5 text-[9px] text-[#2b2e33] hover:bg-[#f9f7f5] hover:text-black">Office Buildings</a>
+    <a href="#" class="block px-4 py-1.5 text-[9px] text-[#2b2e33] hover:bg-[#f9f7f5] hover:text-black">Industries</a>
+    <a href="#" class="block px-4 py-1.5 text-[9px] text-[#2b2e33] hover:bg-[#f9f7f5] hover:text-black">Institutions</a>
+    <a href="#" class="block px-4 py-1.5 text-[9px] text-[#2b2e33] hover:bg-[#f9f7f5] hover:text-black">Hospitals</a>
+    <a href="#" class="block px-4 py-1.5 text-[9px] text-[#2b2e33] hover:bg-[#f9f7f5] hover:text-black">IT Buildings</a>
+    <a href="#" class="block px-4 py-1.5 text-[9px] text-[#2b2e33] hover:bg-[#f9f7f5] hover:text-black">Competitions</a>
+    <a href="#" class="block px-4 py-1.5 text-[9px] text-[#2b2e33] hover:bg-[#f9f7f5] hover:text-black">Misc</a>
+    <a href="#" class="block px-4 py-1.5 text-[9px] text-[#2b2e33] hover:bg-[#f9f7f5] hover:text-black">Religious and Spiritual</a>
+    <a href="#" class="block px-4 py-1.5 text-[9px] text-[#2b2e33] hover:bg-[#f9f7f5] hover:text-black">Commercial</a>
+  </div>
+</div>
+<a href="#services" class="hover:text-black" data-llama-id="27">Services</a>
+<a href="#" class="hover:text-black" data-llama-id="28">Team</a>
+<a href="#contact" class="hover:text-black" data-llama-id="29">Contact</a>
+</div>
+<div class="flex items-center gap-4" data-llama-id="30">
+<button class="hidden sm:block w-8 h-8 flex items-center justify-center" data-llama-id="31"><i class="fa-solid fa-magnifying-glass text-[13px] text-[#1a1d21]" data-llama-id="32"></i></button>
+<a href="#contact" class="bg-[#1a1d21] text-white text-[9px] tracking-[0.15em] font-semibold px-6 py-2.5 hidden sm:inline-block" data-llama-id="33">GET A QUOTE</a>
+<button id="menuBtn" class="lg:hidden text-[#1a1d21]" data-llama-id="34"><i class="fa-solid fa-bars" data-llama-id="35"></i></button>
+</div>
+</div>
+<div id="mobileMenu" class="hidden lg:hidden border-t border-[#e8e4e0] bg-[#f9f7f5] px-4 py-4 space-y-3 text-[11px] tracking-widest" data-llama-id="36">
+<a href="#" class="block" data-llama-id="37">Home</a><a href="#about" class="block" data-llama-id="38">About</a>
+<div x-data="{ open: false }">
+  <button @click="open = !open" class="flex items-center justify-between w-full" data-llama-id="39">Projects <i class="fa-solid fa-chevron-down text-[7px]"></i></button>
+  <div x-show="open" class="pl-4 mt-1 space-y-1 text-[9px] text-[#6b6f73]">
+    <a href="#" class="block py-1">02-Office Buildings</a>
+    <a href="#" class="block py-1">03-Industries</a>
+    <a href="#" class="block py-1">04-Institutions</a>
+    <a href="#" class="block py-1">05-Hospitals</a>
+    <a href="#" class="block py-1">06-IT Buildings</a>
+    <a href="#" class="block py-1">07-Competitions</a>
+    <a href="#" class="block py-1">08-Misc</a>
+    <a href="#" class="block py-1">09-Religious and Spiritual</a>
+    <a href="#" class="block py-1">10-Commercial</a>
+  </div>
+</div>
+<a href="#services" class="block" data-llama-id="40">Services</a><a href="#contact" class="block" data-llama-id="41">Contact</a>
+</div>
+</nav>
 
 <!-- HERO -->
-<section class="relative h-[420px] lg:h-[380px] overflow-hidden bg-[#cbd5e1]" data-llama-id="44">
-<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&amp;h=700&amp;fit=crop" class="absolute inset-0 w-full h-full object-cover" alt="hero" data-llama-id="45">
-<div class="absolute inset-0 bg-gradient-to-r from-[#f5f1ec]/95 via-[#f5f1ec]/45 to-transparent lg:from-[#f5f1ec]/90 lg:via-transparent" data-llama-id="46"></div>
-<div class="relative max-w-[1400px] mx-auto px-4 lg:px-12 h-full flex flex-col justify-center" data-llama-id="47">
-<div class="max-w-[360px]" data-llama-id="48">
-<h1 class="serif text-[38px] lg:text-[48px] leading-[0.95] font-light text-[#1a1d21]" data-llama-id="49">Architecture<br data-llama-id="50">for a Better<br data-llama-id="51">Tomorrow</h1>
-<p class="text-[11px] lg:text-[12px] leading-relaxed text-[#3a3d42] mt-3 max-w-[280px]" data-llama-id="52">We design meaningful spaces that inspire people and strengthen communities.</p>
-<a href="#projects" class="inline-flex items-center gap-2 bg-[#1a1d21] text-white text-[8px] tracking-[0.18em] font-semibold px-5 py-2.5 mt-5" data-llama-id="53">EXPLORE OUR WORK <span data-llama-id="54">→</span></a>
+<section class="relative h-[420px] lg:h-[380px] overflow-hidden bg-[#cbd5e1]" data-llama-id="42">
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&amp;h=700&amp;fit=crop" class="absolute inset-0 w-full h-full object-cover" alt="hero" data-llama-id="43">
+<div class="absolute inset-0 bg-gradient-to-r from-[#f5f1ec]/95 via-[#f5f1ec]/45 to-transparent lg:from-[#f5f1ec]/90 lg:via-transparent" data-llama-id="44"></div>
+<div class="relative max-w-[1400px] mx-auto px-4 lg:px-12 h-full flex flex-col justify-center" data-llama-id="45">
+<div class="max-w-[360px]" data-llama-id="46">
+<h1 class="serif text-[38px] lg:text-[48px] leading-[0.95] font-light text-[#1a1d21]" data-llama-id="47">Architecture<br data-llama-id="48">for a Better<br data-llama-id="49">Tomorrow</h1>
+<p class="text-[11px] lg:text-[12px] leading-relaxed text-[#3a3d42] mt-3 max-w-[280px]" data-llama-id="50">We design meaningful spaces that inspire people and strengthen communities.</p>
+<a href="#projects" class="inline-flex items-center gap-2 bg-[#1a1d21] text-white text-[8px] tracking-[0.18em] font-semibold px-5 py-2.5 mt-5" data-llama-id="51">EXPLORE OUR WORK <span data-llama-id="52">→</span></a>
 </div>
-<div class="absolute bottom-4 left-4 lg:left-12 right-4 lg:right-12 flex items-center justify-between" data-llama-id="55">
-<div class="flex items-center gap-2 text-[9px] tracking-widest text-white/90" data-llama-id="56">
-<span class="font-semibold" data-llama-id="57">01</span><span class="w-8 h-[1px] bg-white/80" data-llama-id="58"></span><span class="opacity-60" data-llama-id="59">01</span><span class="opacity-60" data-llama-id="60">02</span><span class="opacity-60" data-llama-id="61">03</span>
+<!-- hero bottom bar -->
+<div class="absolute bottom-4 left-4 lg:left-12 right-4 lg:right-12 flex items-center justify-between" data-llama-id="53">
+<div class="flex items-center gap-2 text-[9px] tracking-widest text-white/90" data-llama-id="54">
+<span class="font-semibold" data-llama-id="55">01</span><span class="w-8 h-[1px] bg-white/80" data-llama-id="56"></span><span class="opacity-60" data-llama-id="57">01</span><span class="opacity-60" data-llama-id="58">02</span><span class="opacity-60" data-llama-id="59">03</span>
 </div>
-<div class="text-[8px] tracking-[0.18em] text-white/90 font-medium" data-llama-id="62">PEOPLE <span class="opacity-60 mx-1" data-llama-id="63">/</span> PLACES <span class="opacity-60 mx-1" data-llama-id="64">/</span> POSSIBILITIES</div>
+<div class="text-[8px] tracking-[0.18em] text-white/90 font-medium" data-llama-id="60">PEOPLE <span class="opacity-60 mx-1" data-llama-id="61">/</span> PLACES <span class="opacity-60 mx-1" data-llama-id="62">/</span> POSSIBILITIES</div>
 </div>
 </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="max-w-[1400px] mx-auto px-4 lg:px-12 py-8 lg:py-10" data-llama-id="65">
-<div class="grid lg:grid-cols-12 gap-6 lg:gap-8 items-start" data-llama-id="66">
-<div class="lg:col-span-4" data-llama-id="67">
-<div class="flex items-center gap-3 mb-3" data-llama-id="68">
-<span class="text-[9px] tracking-[0.18em] font-semibold text-[#1a1d21]" data-llama-id="69">ABOUT US</span><span class="w-10 h-[1px] bg-[#1a1d21]" data-llama-id="70"></span>
+<section id="about" class="max-w-[1400px] mx-auto px-4 lg:px-12 py-8 lg:py-10" data-llama-id="63">
+<div class="grid lg:grid-cols-12 gap-6 lg:gap-8 items-start" data-llama-id="64">
+<div class="lg:col-span-4" data-llama-id="65">
+<div class="flex items-center gap-3 mb-3" data-llama-id="66">
+<span class="text-[9px] tracking-[0.18em] font-semibold text-[#1a1d21]" data-llama-id="67">ABOUT US</span><span class="w-10 h-[1px] bg-[#1a1d21]" data-llama-id="68"></span>
 </div>
-<h2 class="serif text-[30px] lg:text-[34px] leading-none font-light text-[#1a1d21]" data-llama-id="71">Designing<br data-llama-id="72">Spaces. Enriching<br data-llama-id="73">Lives.</h2>
-<p class="text-[11px] leading-relaxed text-[#6b6f73] mt-3 max-w-[300px]" data-llama-id="74">Aravind Associates is an award-winning architecture and design studio dedicated to creating sustainable, functional, and beautiful environments. We believe in the power of architecture to shape a better, more human future.</p>
-<a href="about.html" class="inline-flex items-center gap-2 text-[9px] tracking-widest font-semibold mt-4 border-b border-[#1a1d21] pb-1" data-llama-id="75">OUR STORY <span data-llama-id="76">→</span></a>
+<h2 class="serif text-[30px] lg:text-[34px] leading-none font-light text-[#1a1d21]" data-llama-id="69">Designing<br data-llama-id="70">Spaces. Enriching<br data-llama-id="71">Lives.</h2>
+<p class="text-[11px] leading-relaxed text-[#6b6f73] mt-3 max-w-[300px]" data-llama-id="72">Atelier Arc is an award-winning architecture and design studio dedicated to creating sustainable, functional, and beautiful environments. We believe in the power of architecture to shape a better, more human future.</p>
+<a href="#" class="inline-flex items-center gap-2 text-[9px] tracking-widest font-semibold mt-4 border-b border-[#1a1d21] pb-1" data-llama-id="73">OUR STORY <span data-llama-id="74">→</span></a>
 </div>
-<div class="lg:col-span-5 relative h-[240px] overflow-hidden" data-llama-id="77">
-<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=700&amp;h=500&amp;fit=crop" class="w-full h-full object-cover" alt="about" data-llama-id="78">
-<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" data-llama-id="79"></div>
-<div class="absolute bottom-4 left-4 text-white text-[10px] tracking-[0.14em] leading-relaxed font-medium" data-llama-id="80">SUSTAINABLE<br data-llama-id="81">THOUGHTFUL<br data-llama-id="82">TIMELESS</div>
+<div class="lg:col-span-5 relative h-[240px] overflow-hidden" data-llama-id="75">
+<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=700&amp;h=500&amp;fit=crop" class="w-full h-full object-cover" alt="about" data-llama-id="76">
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" data-llama-id="77"></div>
+<div class="absolute bottom-4 left-4 text-white text-[10px] tracking-[0.14em] leading-relaxed font-medium" data-llama-id="78">SUSTAINABLE<br data-llama-id="79">THOUGHTFUL<br data-llama-id="80">TIMELESS</div>
 </div>
-<div class="lg:col-span-3 space-y-0" data-llama-id="83">
-<div class="border-b border-[#e8e4e0] py-4 pl-4" data-llama-id="84">
-<div class="serif text-[28px] font-light text-[#1a1d21] leading-none" data-llama-id="85">10+</div>
-<div class="text-[8px] tracking-[0.14em] text-[#6b6f73] mt-1" data-llama-id="86">YEARS OF EXPERIENCE</div>
+<div class="lg:col-span-3 space-y-0" data-llama-id="81">
+<div class="border-b border-[#e8e4e0] py-4 pl-4" data-llama-id="82">
+<div class="serif text-[28px] font-light text-[#1a1d21] leading-none" data-llama-id="83">10+</div>
+<div class="text-[8px] tracking-[0.14em] text-[#6b6f73] mt-1" data-llama-id="84">YEARS OF EXPERIENCE</div>
 </div>
-<div class="border-b border-[#e8e4e0] py-4 pl-4" data-llama-id="87">
-<div class="serif text-[28px] font-light text-[#1a1d21] leading-none" data-llama-id="88">150+</div>
-<div class="text-[8px] tracking-[0.14em] text-[#6b6f73] mt-1" data-llama-id="89">PROJECTS COMPLETED</div>
+<div class="border-b border-[#e8e4e0] py-4 pl-4" data-llama-id="85">
+<div class="serif text-[28px] font-light text-[#1a1d21] leading-none" data-llama-id="86">150+</div>
+<div class="text-[8px] tracking-[0.14em] text-[#6b6f73] mt-1" data-llama-id="87">PROJECTS COMPLETED</div>
 </div>
-<div class="py-4 pl-4" data-llama-id="90">
-<div class="serif text-[28px] font-light text-[#1a1d21] leading-none" data-llama-id="91">20+</div>
-<div class="text-[8px] tracking-[0.14em] text-[#6b6f73] mt-1" data-llama-id="92">INTERNATIONAL CLIENTS</div>
+<div class="py-4 pl-4" data-llama-id="88">
+<div class="serif text-[28px] font-light text-[#1a1d21] leading-none" data-llama-id="89">20+</div>
+<div class="text-[8px] tracking-[0.14em] text-[#6b6f73] mt-1" data-llama-id="90">INTERNATIONAL CLIENTS</div>
 </div>
 </div>
 </div>
 </section>
 
 <!-- SERVICES -->
-<section id="services" class="bg-white border-t border-[#f0ece8]" data-llama-id="93">
-<div class="max-w-[1400px] mx-auto px-4 lg:px-12 py-8" data-llama-id="94">
-<div class="flex items-center justify-between mb-6" data-llama-id="95">
-<div class="flex items-center gap-3" data-llama-id="96">
-<span class="text-[9px] tracking-[0.18em] font-semibold" data-llama-id="97">OUR SERVICES</span><span class="w-10 h-[1px] bg-[#1a1d21]" data-llama-id="98"></span>
+<section id="services" class="bg-white border-t border-[#f0ece8]" data-llama-id="91">
+<div class="max-w-[1400px] mx-auto px-4 lg:px-12 py-8" data-llama-id="92">
+<div class="flex items-center justify-between mb-6" data-llama-id="93">
+<div class="flex items-center gap-3" data-llama-id="94">
+<span class="text-[9px] tracking-[0.18em] font-semibold" data-llama-id="95">OUR SERVICES</span><span class="w-10 h-[1px] bg-[#1a1d21]" data-llama-id="96"></span>
 </div>
-<a href="services.html" class="text-[9px] tracking-widest font-semibold flex items-center gap-2" data-llama-id="99">VIEW ALL SERVICES <span data-llama-id="100">→</span></a>
+<a href="#" class="text-[9px] tracking-widest font-semibold flex items-center gap-2" data-llama-id="97">VIEW ALL SERVICES <span data-llama-id="98">→</span></a>
 </div>
-<div class="grid grid-cols-2 lg:grid-cols-4 divide-x divide-[#eee]" data-llama-id="101">
-<div class="text-center px-2 lg:px-6 py-2" data-llama-id="102">
-<div class="w-10 h-10 mx-auto mb-3 text-[#1a1d21]" data-llama-id="103"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2" data-llama-id="104"><path d="M8 32 V14 L14 8 L14 32 M14 14 H20 V32 M20 18 H28 L28 32 M32 12 V32" data-llama-id="105"></path><path d="M10 18 H12 M10 22 H12 M22 22 H24 M22 26 H24" data-llama-id="106"></path></svg></div>
-<div class="text-[10px] tracking-widest font-semibold" data-llama-id="107">ARCHITECTURE</div>
-<p class="text-[10px] text-[#8a8d90] mt-1 leading-relaxed" data-llama-id="108">Innovative design for<br data-llama-id="109">lasting impact.</p>
+<div class="grid grid-cols-2 lg:grid-cols-4 divide-x divide-[#eee]" data-llama-id="99">
+<div class="text-center px-2 lg:px-6 py-2" data-llama-id="100">
+<div class="w-10 h-10 mx-auto mb-3 text-[#1a1d21]" data-llama-id="101"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2" data-llama-id="102"><path d="M8 32 V14 L14 8 L14 32 M14 14 H20 V32 M20 18 H28 L28 32 M32 12 V32" data-llama-id="103"></path><path d="M10 18 H12 M10 22 H12 M22 22 H24 M22 26 H24" data-llama-id="104"></path></svg></div>
+<div class="text-[10px] tracking-widest font-semibold" data-llama-id="105">ARCHITECTURE</div>
+<p class="text-[10px] text-[#8a8d90] mt-1 leading-relaxed" data-llama-id="106">Innovative design for<br data-llama-id="107">lasting impact.</p>
 </div>
-<div class="text-center px-2 lg:px-6 py-2" data-llama-id="110">
-<div class="w-10 h-10 mx-auto mb-3 text-[#1a1d21]" data-llama-id="111"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2" data-llama-id="112"><path d="M12 10 H28 C30 10 32 12 32 14 V18 C32 21 29 23 26 23 H14 C11 23 8 21 8 18 V13" data-llama-id="113"></path><path d="M10 23 L10 30 L14 32 L28 32 L32 30 L32 23" data-llama-id="114"></path><path d="M12 28 H14 M10 26 L12 27" data-llama-id="115"></path><rect x="14" y="30" width="4" height="3" data-llama-id="116"></rect><rect x="24" y="30" width="4" height="3" data-llama-id="117"></rect></svg></div>
-<div class="text-[10px] tracking-widest font-semibold" data-llama-id="118">INTERIOR DESIGN</div>
-<p class="text-[10px] text-[#8a8d90] mt-1 leading-relaxed" data-llama-id="119">Interiors that inspire<br data-llama-id="120">everyday living.</p>
+<div class="text-center px-2 lg:px-6 py-2" data-llama-id="108">
+<div class="w-10 h-10 mx-auto mb-3 text-[#1a1d21]" data-llama-id="109"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2" data-llama-id="110"><path d="M12 10 H28 C30 10 32 12 32 14 V18 C32 21 29 23 26 23 H14 C11 23 8 21 8 18 V13" data-llama-id="111"></path><path d="M10 23 L10 30 L14 32 L28 32 L32 30 L32 23" data-llama-id="112"></path><path d="M12 28 H14 M10 26 L12 27" data-llama-id="113"></path><rect x="14" y="30" width="4" height="3" data-llama-id="114"></rect><rect x="24" y="30" width="4" height="3" data-llama-id="115"></rect></svg></div>
+<div class="text-[10px] tracking-widest font-semibold" data-llama-id="116">INTERIOR DESIGN</div>
+<p class="text-[10px] text-[#8a8d90] mt-1 leading-relaxed" data-llama-id="117">Interiors that inspire<br data-llama-id="118">everyday living.</p>
 </div>
-<div class="text-center px-2 lg:px-6 py-2" data-llama-id="121">
-<div class="w-10 h-10 mx-auto mb-3 text-[#1a1d21]" data-llama-id="122"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2" data-llama-id="123"><path d="M28 8 C28 8 12 10 10 22 C10 26 12 30 18 32 C18 32 24 28 28 20 C30 15 30 8 30 8 Z" data-llama-id="124"></path><path d="M10 22 C14 24 20 25 28 20" data-llama-id="125"></path><path d="M14 18 L18 24 M20 14 L24 20" data-llama-id="126"></path></svg></div>
-<div class="text-[10px] tracking-widest font-semibold" data-llama-id="127">SUSTAINABLE DESIGN</div>
-<p class="text-[10px] text-[#8a8d90] mt-1 leading-relaxed" data-llama-id="128">Greener spaces for<br data-llama-id="129">a healthier planet.</p>
+<div class="text-center px-2 lg:px-6 py-2" data-llama-id="119">
+<div class="w-10 h-10 mx-auto mb-3 text-[#1a1d21]" data-llama-id="120"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2" data-llama-id="121"><path d="M28 8 C28 8 12 10 10 22 C10 26 12 30 18 32 C18 32 24 28 28 20 C30 15 30 8 30 8 Z" data-llama-id="122"></path><path d="M10 22 C14 24 20 25 28 20" data-llama-id="123"></path><path d="M14 18 L18 24 M20 14 L24 20" data-llama-id="124"></path></svg></div>
+<div class="text-[10px] tracking-widest font-semibold" data-llama-id="125">SUSTAINABLE DESIGN</div>
+<p class="text-[10px] text-[#8a8d90] mt-1 leading-relaxed" data-llama-id="126">Greener spaces for<br data-llama-id="127">a healthier planet.</p>
 </div>
-<div class="text-center px-2 lg:px-6 py-2" data-llama-id="130">
-<div class="w-10 h-10 mx-auto mb-3 text-[#1a1d21]" data-llama-id="131"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2" data-llama-id="132"><path d="M20 6 L32 12 L20 18 L8 12 Z" data-llama-id="133"></path><path d="M8 18 L20 24 L32 18" data-llama-id="134"></path><path d="M8 24 L20 30 L32 24" data-llama-id="135"></path></svg></div>
-<div class="text-[10px] tracking-widest font-semibold" data-llama-id="136">PLANNING &amp; CONSULTATION</div>
-<p class="text-[10px] text-[#8a8d90] mt-1 leading-relaxed" data-llama-id="137">From vision to reality.<br data-llama-id="138">with expert guidance.</p>
+<div class="text-center px-2 lg:px-6 py-2" data-llama-id="128">
+<div class="w-10 h-10 mx-auto mb-3 text-[#1a1d21]" data-llama-id="129"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2" data-llama-id="130"><path d="M20 6 L32 12 L20 18 L8 12 Z" data-llama-id="131"></path><path d="M8 18 L20 24 L32 18" data-llama-id="132"></path><path d="M8 24 L20 30 L32 24" data-llama-id="133"></path></svg></div>
+<div class="text-[10px] tracking-widest font-semibold" data-llama-id="134">PLANNING &amp; CONSULTATION</div>
+<p class="text-[10px] text-[#8a8d90] mt-1 leading-relaxed" data-llama-id="135">From vision to reality.<br data-llama-id="136">with expert guidance.</p>
 </div>
 </div>
 </div>
 </section>
 
 <!-- FEATURED PROJECTS -->
-<section id="projects" class="max-w-[1400px] mx-auto px-4 lg:px-12 py-8" data-llama-id="139">
-<div class="flex items-center justify-between mb-4" data-llama-id="140">
-<div class="flex items-center gap-3" data-llama-id="141">
-<span class="text-[9px] tracking-[0.18em] font-semibold" data-llama-id="142">FEATURED PROJECTS</span><span class="w-10 h-[1px] bg-[#1a1d21]" data-llama-id="143"></span>
+<section id="projects" class="max-w-[1400px] mx-auto px-4 lg:px-12 py-8" data-llama-id="137">
+<div class="flex items-center justify-between mb-4" data-llama-id="138">
+<div class="flex items-center gap-3" data-llama-id="139">
+<span class="text-[9px] tracking-[0.18em] font-semibold" data-llama-id="140">FEATURED PROJECTS</span><span class="w-10 h-[1px] bg-[#1a1d21]" data-llama-id="141"></span>
 </div>
-<a href="projects.html" class="text-[9px] tracking-widest font-semibold flex items-center gap-2" data-llama-id="144">VIEW ALL PROJECTS <span data-llama-id="145">→</span></a>
+<a href="#" class="text-[9px] tracking-widest font-semibold flex items-center gap-2" data-llama-id="142">VIEW ALL PROJECTS <span data-llama-id="143">→</span></a>
 </div>
-<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-5" data-llama-id="146">
-<div class="group cursor-pointer" data-llama-id="147">
-<div class="h-[150px] overflow-hidden" data-llama-id="148"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&amp;h=350&amp;fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" data-llama-id="149"></div>
-<div class="bg-white p-3 border border-t-0 border-[#eee]" data-llama-id="150">
-<div class="text-[10px] font-semibold tracking-wide" data-llama-id="151">HILLSIDE RESIDENCE</div>
-<div class="text-[10px] text-[#8a8d90] mt-0.5" data-llama-id="152">Residential &nbsp;| &nbsp;2023</div>
-</div>
-</div>
-<div class="group cursor-pointer" data-llama-id="153">
-<div class="h-[150px] overflow-hidden" data-llama-id="154"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&amp;h=350&amp;fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" data-llama-id="155"></div>
-<div class="bg-[#f9f7f5] p-3" data-llama-id="156">
-<div class="text-[10px] font-semibold tracking-wide" data-llama-id="157">RIVERDALE OFFICE</div>
-<div class="text-[10px] text-[#8a8d90] mt-0.5" data-llama-id="158">Commercial &nbsp;| &nbsp;2022</div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-5" data-llama-id="144">
+<div class="group cursor-pointer" data-llama-id="145">
+<div class="h-[150px] overflow-hidden" data-llama-id="146"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&amp;h=350&amp;fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" data-llama-id="147"></div>
+<div class="bg-white p-3 border border-t-0 border-[#eee]" data-llama-id="148">
+<div class="text-[10px] font-semibold tracking-wide" data-llama-id="149">HILLSIDE RESIDENCE</div>
+<div class="text-[10px] text-[#8a8d90] mt-0.5" data-llama-id="150">Residential &nbsp;| &nbsp;2023</div>
 </div>
 </div>
-<div class="group cursor-pointer" data-llama-id="159">
-<div class="h-[150px] overflow-hidden" data-llama-id="160"><img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=500&amp;h=350&amp;fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" data-llama-id="161"></div>
-<div class="bg-white p-3 border border-t-0 border-[#eee]" data-llama-id="162">
-<div class="text-[10px] font-semibold tracking-wide" data-llama-id="163">THE URBAN LOFT</div>
-<div class="text-[10px] text-[#8a8d90] mt-0.5" data-llama-id="164">Interior Design &nbsp;| &nbsp;2023</div>
+<div class="group cursor-pointer" data-llama-id="151">
+<div class="h-[150px] overflow-hidden" data-llama-id="152"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=500&amp;h=350&amp;fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" data-llama-id="153"></div>
+<div class="bg-[#f9f7f5] p-3" data-llama-id="154">
+<div class="text-[10px] font-semibold tracking-wide" data-llama-id="155">RIVERDALE OFFICE</div>
+<div class="text-[10px] text-[#8a8d90] mt-0.5" data-llama-id="156">Commercial &nbsp;| &nbsp;2022</div>
 </div>
 </div>
-<div class="group cursor-pointer" data-llama-id="165">
-<div class="h-[150px] overflow-hidden" data-llama-id="166"><img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=500&amp;h=350&amp;fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" data-llama-id="167"></div>
-<div class="bg-[#f9f7f5] p-3" data-llama-id="168">
-<div class="text-[10px] font-semibold tracking-wide" data-llama-id="169">GREENFIELD COMMUNITY</div>
-<div class="text-[10px] text-[#8a8d90] mt-0.5" data-llama-id="170">Public Space &nbsp;| &nbsp;2022</div>
+<div class="group cursor-pointer" data-llama-id="157">
+<div class="h-[150px] overflow-hidden" data-llama-id="158"><img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=500&amp;h=350&amp;fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" data-llama-id="159"></div>
+<div class="bg-white p-3 border border-t-0 border-[#eee]" data-llama-id="160">
+<div class="text-[10px] font-semibold tracking-wide" data-llama-id="161">THE URBAN LOFT</div>
+<div class="text-[10px] text-[#8a8d90] mt-0.5" data-llama-id="162">Interior Design &nbsp;| &nbsp;2023</div>
 </div>
 </div>
+<div class="group cursor-pointer" data-llama-id="163">
+<div class="h-[150px] overflow-hidden" data-llama-id="164"><img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=500&amp;h=350&amp;fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" data-llama-id="165"></div>
+<div class="bg-[#f9f7f5] p-3" data-llama-id="166">
+<div class="text-[10px] font-semibold tracking-wide" data-llama-id="167">GREENFIELD COMMUNITY</div>
+<div class="text-[10px] text-[#8a8d90] mt-0.5" data-llama-id="168">Public Space &nbsp;| &nbsp;2022</div>
 </div>
-</section>
-
-<!-- CAREERS (Short teaser — full list on careers.html) -->
-<section id="careers" class="bg-white border-t border-[#f0ece8]">
-<div class="max-w-[1400px] mx-auto px-4 lg:px-12 py-10">
-  <div class="grid lg:grid-cols-2 gap-8 items-center">
-    <div>
-      <div class="flex items-center gap-3 mb-4">
-        <span class="text-[9px] tracking-[0.18em] font-semibold text-[#1a1d21]">CAREERS</span>
-        <span class="w-10 h-[1px] bg-[#1a1d21]"></span>
-      </div>
-      <h2 class="serif text-[30px] lg:text-[36px] leading-none font-light text-[#1a1d21]">Join a studio that<br>values craft.</h2>
-      <p class="text-[11px] leading-relaxed text-[#6b6f73] mt-4 max-w-[440px]">We're always looking for talented architects, designers, and engineers who share our approach. Explore current openings or reach out to introduce yourself.</p>
-      <a href="careers.html" class="inline-flex items-center gap-2 bg-[#1a1d21] text-white text-[9px] tracking-[0.18em] font-semibold px-5 py-3 mt-5">VIEW OPENINGS <span>→</span></a>
-    </div>
-    <div class="relative h-[240px] overflow-hidden">
-      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&h=500&fit=crop" class="w-full h-full object-cover" alt="Careers">
-      <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-      <div class="absolute bottom-4 left-4 text-white text-[10px] tracking-[0.14em] leading-relaxed font-medium">BUILD THE<br>NEXT CHAPTER<br>WITH US</div>
-    </div>
-  </div>
+</div>
 </div>
 </section>
 
 <!-- PROCESS -->
-<section class="relative bg-[#1a1d21] text-white overflow-hidden" data-llama-id="220">
-<img src="https://images.unsplash.com/photo-1486915309851-b0cc1f8a0084?w=1600&amp;h=400&amp;fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-20" data-llama-id="221">
-<div class="absolute inset-0 bg-[#1a1d21]/70" data-llama-id="222"></div>
-<div class="relative max-w-[1400px] mx-auto px-4 lg:px-12 py-10" data-llama-id="223">
-<div class="grid lg:grid-cols-12 gap-8 items-start" data-llama-id="224">
-<div class="lg:col-span-4" data-llama-id="225">
-<div class="flex items-center gap-3 mb-3" data-llama-id="226"><span class="text-[9px] tracking-[0.18em] text-white/70" data-llama-id="227">OUR PROCESS</span><span class="w-10 h-[1px] bg-white/30" data-llama-id="228"></span></div>
-<h2 class="serif text-[26px] leading-none font-light" data-llama-id="229">A Clear Path<br data-llama-id="230">from Vision to Reality.</h2>
+<section class="relative bg-[#1a1d21] text-white overflow-hidden" data-llama-id="169">
+<img src="https://images.unsplash.com/photo-1486915309851-b0cc1f8a0084?w=1600&amp;h=400&amp;fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-20" data-llama-id="170">
+<div class="absolute inset-0 bg-[#1a1d21]/70" data-llama-id="171"></div>
+<div class="relative max-w-[1400px] mx-auto px-4 lg:px-12 py-10" data-llama-id="172">
+<div class="grid lg:grid-cols-12 gap-8 items-start" data-llama-id="173">
+<div class="lg:col-span-4" data-llama-id="174">
+<div class="flex items-center gap-3 mb-3" data-llama-id="175"><span class="text-[9px] tracking-[0.18em] text-white/70" data-llama-id="176">OUR PROCESS</span><span class="w-10 h-[1px] bg-white/30" data-llama-id="177"></span></div>
+<h2 class="serif text-[26px] leading-none font-light" data-llama-id="178">A Clear Path<br data-llama-id="179">from Vision to Reality.</h2>
+<a href="#" class="inline-flex items-center gap-2 text-[9px] tracking-widest font-semibold text-white/80 mt-5" data-llama-id="180">LEARN MORE <span data-llama-id="181">→</span></a>
 </div>
-<div class="lg:col-span-8 grid grid-cols-2 lg:grid-cols-4 gap-6 relative" data-llama-id="233">
-<div class="hidden lg:block absolute top-[18px] left-12 right-12 h-[1px] bg-white/15" data-llama-id="234"></div>
-<div class="text-center relative" data-llama-id="235">
-<div class="w-9 h-9 mx-auto rounded-full border border-white/30 flex items-center justify-center bg-[#1a1d21]" data-llama-id="236"><i class="fa-regular fa-compass text-[14px]" data-llama-id="237"></i></div>
-<div class="text-[9px] tracking-widest font-semibold mt-3" data-llama-id="238">01. DISCOVER</div>
-<p class="text-[10px] text-white/60 mt-1 leading-relaxed" data-llama-id="239">Understand needs<br data-llama-id="240">and possibilities.</p>
+<div class="lg:col-span-8 grid grid-cols-2 lg:grid-cols-4 gap-6 relative" data-llama-id="182">
+<!-- line -->
+<div class="hidden lg:block absolute top-[18px] left-12 right-12 h-[1px] bg-white/15" data-llama-id="183"></div>
+<div class="text-center relative" data-llama-id="184">
+<div class="w-9 h-9 mx-auto rounded-full border border-white/30 flex items-center justify-center bg-[#1a1d21]" data-llama-id="185"><i class="fa-regular fa-compass text-[14px]" data-llama-id="186"></i></div>
+<div class="text-[9px] tracking-widest font-semibold mt-3" data-llama-id="187">01. DISCOVER</div>
+<p class="text-[10px] text-white/60 mt-1 leading-relaxed" data-llama-id="188">Understand needs<br data-llama-id="189">and possibilities.</p>
 </div>
-<div class="text-center relative" data-llama-id="241">
-<div class="w-9 h-9 mx-auto rounded-full border border-white/30 flex items-center justify-center bg-[#1a1d21]" data-llama-id="242"><i class="fa-regular fa-lightbulb text-[14px]" data-llama-id="243"></i></div>
-<div class="text-[9px] tracking-widest font-semibold mt-3" data-llama-id="244">02. DESIGN</div>
-<p class="text-[10px] text-white/60 mt-1 leading-relaxed" data-llama-id="245">Create thoughtful,<br data-llama-id="246">innovative solutions.</p>
+<div class="text-center relative" data-llama-id="190">
+<div class="w-9 h-9 mx-auto rounded-full border border-white/30 flex items-center justify-center bg-[#1a1d21]" data-llama-id="191"><i class="fa-regular fa-lightbulb text-[14px]" data-llama-id="192"></i></div>
+<div class="text-[9px] tracking-widest font-semibold mt-3" data-llama-id="193">02. DESIGN</div>
+<p class="text-[10px] text-white/60 mt-1 leading-relaxed" data-llama-id="194">Create thoughtful,<br data-llama-id="195">innovative solutions.</p>
 </div>
-<div class="text-center relative" data-llama-id="247">
-<div class="w-9 h-9 mx-auto rounded-full border border-white/30 flex items-center justify-center bg-[#1a1d21]" data-llama-id="248"><i class="fa-regular fa-file-lines text-[14px]" data-llama-id="249"></i></div>
-<div class="text-[9px] tracking-widest font-semibold mt-3" data-llama-id="250">03. DEVELOP</div>
-<p class="text-[10px] text-white/60 mt-1 leading-relaxed" data-llama-id="251">Refine and prepare<br data-llama-id="252">for implementation.</p>
+<div class="text-center relative" data-llama-id="196">
+<div class="w-9 h-9 mx-auto rounded-full border border-white/30 flex items-center justify-center bg-[#1a1d21]" data-llama-id="197"><i class="fa-regular fa-file-lines text-[14px]" data-llama-id="198"></i></div>
+<div class="text-[9px] tracking-widest font-semibold mt-3" data-llama-id="199">03. DEVELOP</div>
+<p class="text-[10px] text-white/60 mt-1 leading-relaxed" data-llama-id="200">Refine and prepare<br data-llama-id="201">for implementation.</p>
 </div>
-<div class="text-center relative" data-llama-id="253">
-<div class="w-9 h-9 mx-auto rounded-full border border-white/30 flex items-center justify-center bg-[#1a1d21]" data-llama-id="254"><i class="fa-solid fa-helmet-safety text-[14px]" data-llama-id="255"></i></div>
-<div class="text-[9px] tracking-widest font-semibold mt-3" data-llama-id="256">04. REALIZE</div>
-<p class="text-[10px] text-white/60 mt-1 leading-relaxed" data-llama-id="257">Bring ideas to life<br data-llama-id="258">with precision.</p>
+<div class="text-center relative" data-llama-id="202">
+<div class="w-9 h-9 mx-auto rounded-full border border-white/30 flex items-center justify-center bg-[#1a1d21]" data-llama-id="203"><i class="fa-solid fa-helmet-safety text-[14px]" data-llama-id="204"></i></div>
+<div class="text-[9px] tracking-widest font-semibold mt-3" data-llama-id="205">04. REALIZE</div>
+<p class="text-[10px] text-white/60 mt-1 leading-relaxed" data-llama-id="206">Bring ideas to life<br data-llama-id="207">with precision.</p>
 </div>
 </div>
 </div>
@@ -205,28 +243,62 @@ body{font-family:'Inter',sans-serif;color:#1a1d21}
 </section>
 
 <!-- TESTIMONIAL + CTA -->
-<section class="max-w-[1400px] mx-auto px-4 lg:px-12 py-6 grid lg:grid-cols-3 gap-6 items-stretch" data-llama-id="259">
-<div class="border-r-0 lg:border-r border-[#e8e4e0] pr-0 lg:pr-6 py-2" data-llama-id="260">
-<div class="flex items-center gap-3 mb-3" data-llama-id="261"><span class="text-[9px] tracking-[0.18em] font-semibold" data-llama-id="262">WHAT OUR CLIENTS SAY</span><span class="w-10 h-[1px] bg-[#1a1d21]" data-llama-id="263"></span></div>
-<p class="text-[11px] leading-relaxed text-[#3a3d42]" data-llama-id="264">"Aravind Associates transformed our vision into a space that truly feels like home. Their creativity, professionalism, and attention to detail are unmatched."</p>
-<p class="text-[9px] text-[#6b6f73] mt-3" data-llama-id="265">— <span class="font-semibold text-[#1a1d21]" data-llama-id="266">Sarah Mitchell</span>, Private Client</p>
+<section class="max-w-[1400px] mx-auto px-4 lg:px-12 py-6 grid lg:grid-cols-3 gap-6 items-stretch" data-llama-id="208">
+<div class="border-r-0 lg:border-r border-[#e8e4e0] pr-0 lg:pr-6 py-2" data-llama-id="209">
+<div class="flex items-center gap-3 mb-3" data-llama-id="210"><span class="text-[9px] tracking-[0.18em] font-semibold" data-llama-id="211">WHAT OUR CLIENTS SAY</span><span class="w-10 h-[1px] bg-[#1a1d21]" data-llama-id="212"></span></div>
+<p class="text-[11px] leading-relaxed text-[#3a3d42]" data-llama-id="213">“Atelier Arc transformed our vision into a space that truly feels like home. Their creativity, professionalism, and attention to detail are unmatched.”</p>
+<p class="text-[9px] text-[#6b6f73] mt-3" data-llama-id="214">— <span class="font-semibold text-[#1a1d21]" data-llama-id="215">Sarah Mitchell</span>, Private Client</p>
+<div class="flex items-center justify-between mt-4" data-llama-id="216">
+<div class="flex gap-1" data-llama-id="217"><span class="w-1.5 h-1.5 rounded-full bg-[#1a1d21]" data-llama-id="218"></span><span class="w-1.5 h-1.5 rounded-full bg-[#ddd]" data-llama-id="219"></span><span class="w-1.5 h-1.5 rounded-full bg-[#ddd]" data-llama-id="220"></span><span class="w-1.5 h-1.5 rounded-full bg-[#ddd]" data-llama-id="221"></span></div>
+<div class="flex gap-2 text-[10px] text-[#9aa0a6]" data-llama-id="222"><button class="w-6 h-6 flex items-center justify-center" data-llama-id="223"><i class="fa-solid fa-chevron-left text-[10px]" data-llama-id="224"></i></button><button class="w-6 h-6 flex items-center justify-center" data-llama-id="225"><i class="fa-solid fa-chevron-right text-[10px]" data-llama-id="226"></i></button></div>
 </div>
-<div id="contact" class="py-2 lg:px-6" data-llama-id="278">
-<div class="flex items-center gap-3 mb-3" data-llama-id="279"><span class="text-[9px] tracking-[0.18em] font-semibold text-[#8a8d90]" data-llama-id="280">LET'S BUILD SOMETHING MEANINGFUL</span><span class="w-10 h-[1px] bg-[#bbb]" data-llama-id="281"></span></div>
-<h3 class="serif text-[20px] font-light text-[#1a1d21]" data-llama-id="282">Start Your Project Today.</h3>
-<p class="text-[10px] leading-relaxed text-[#6b6f73] mt-2 max-w-[320px]" data-llama-id="283">Whether you have a project in mind or just want to explore possibilities, we'd love to hear from you.</p>
-<a href="contact.html" class="bg-[#1a1d21] text-white text-[9px] tracking-widest font-semibold px-5 py-2.5 mt-4 inline-flex items-center gap-2" data-llama-id="284">GET IN TOUCH <span data-llama-id="285">→</span></a>
 </div>
-<div class="relative h-[180px] overflow-hidden" data-llama-id="286">
-<img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&amp;h=400&amp;fit=crop" class="w-full h-full object-cover" data-llama-id="287">
-<div class="absolute inset-0 bg-black/25" data-llama-id="288"></div>
-<div class="absolute bottom-4 left-4 text-white text-[10px] tracking-[0.14em] leading-relaxed" data-llama-id="289">GREAT SPACES<br data-llama-id="290">CREATE BRIGHTER<br data-llama-id="291">FUTURES</div>
+<div id="contact" class="py-2 lg:px-6" data-llama-id="227">
+<div class="flex items-center gap-3 mb-3" data-llama-id="228"><span class="text-[9px] tracking-[0.18em] font-semibold text-[#8a8d90]" data-llama-id="229">LET'S BUILD SOMETHING MEANINGFUL</span><span class="w-10 h-[1px] bg-[#bbb]" data-llama-id="230"></span></div>
+<h3 class="serif text-[20px] font-light text-[#1a1d21]" data-llama-id="231">Start Your Project Today.</h3>
+<p class="text-[10px] leading-relaxed text-[#6b6f73] mt-2 max-w-[320px]" data-llama-id="232">Whether you have a project in mind or just want to explore possibilities, we'd love to hear from you.</p>
+<button onclick="document.getElementById('toast').classList.remove('hidden')" class="bg-[#1a1d21] text-white text-[9px] tracking-widest font-semibold px-5 py-2.5 mt-4 inline-flex items-center gap-2" data-llama-id="233">GET IN TOUCH <span data-llama-id="234">→</span></button>
+</div>
+<div class="relative h-[180px] overflow-hidden" data-llama-id="235">
+<img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&amp;h=400&amp;fit=crop" class="w-full h-full object-cover" data-llama-id="236">
+<div class="absolute inset-0 bg-black/25" data-llama-id="237"></div>
+<div class="absolute bottom-4 left-4 text-white text-[10px] tracking-[0.14em] leading-relaxed" data-llama-id="238">GREAT SPACES<br data-llama-id="239">CREATE BRIGHTER<br data-llama-id="240">FUTURES</div>
 </div>
 </section>
 
-<!-- ================= SHARED FOOTER (injected) ================= -->
-<div id="site-footer"></div>
-<!-- ============================================================ -->
+<!-- FOOTER -->
+<footer class="bg-[#1a1d21] text-white" data-llama-id="241">
+<div class="max-w-[1400px] mx-auto px-4 lg:px-12 py-8 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6" data-llama-id="242">
+<div class="flex items-center gap-3" data-llama-id="243">
+<div class="text-[30px] font-bold leading-none" data-llama-id="244">
+  <!-- FIXED FOOTER LOGO: Updated src to relative path. No filter needed here since background is dark -->
+  <img src="asa_logo.jpg" alt="ASA Logo" class="h-6 w-auto object-contain" data-llama-id="245">
+</div>
+<div class="leading-tight" data-llama-id="247">
+<div class="text-[9px] tracking-[0.24em]" data-llama-id="248">ATELIER ARC</div>
+<div class="text-[6px] tracking-[0.18em] opacity-60" data-llama-id="249">SPACES FOR A BETTER TOMORROW</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-6 lg:gap-12 text-[9px] leading-relaxed" data-llama-id="250">
+<div class="flex gap-2 items-start" data-llama-id="251"><i class="fa-solid fa-location-dot mt-0.5 opacity-70" data-llama-id="252"></i><span class="opacity-80" data-llama-id="253">123 Design Street<br data-llama-id="254">New York, NY 10001</span></div>
+<div class="flex gap-2 items-center" data-llama-id="255"><i class="fa-solid fa-phone opacity-70" data-llama-id="256"></i><span class="opacity-80" data-llama-id="257">+1 (555) 123-4567</span></div>
+<div class="flex gap-2 items-center" data-llama-id="258"><i class="fa-solid fa-envelope opacity-70" data-llama-id="259"></i><span class="opacity-80" data-llama-id="260">hello@atelierarc.com</span></div>
+</div>
+<div class="flex gap-4 text-[14px] opacity-80" data-llama-id="261">
+<a href="#" data-llama-id="262"><i class="fa-brands fa-instagram" data-llama-id="263"></i></a>
+<a href="#" data-llama-id="264"><i class="fa-brands fa-linkedin-in" data-llama-id="265"></i></a>
+<a href="#" data-llama-id="266"><i class="fa-brands fa-pinterest-p" data-llama-id="267"></i></a>
+<a href="#" data-llama-id="268"><i class="fa-brands fa-youtube" data-llama-id="269"></i></a>
+</div>
+</div>
+<div class="border-t border-white/10 text-center text-[8px] tracking-widest text-white/40 py-3" data-llama-id="270">© 2024 ATELIER ARC — CURATED BY KUMAR. ALL RIGHTS RESERVED.</div>
+</footer>
+
+<div id="toast" class="hidden fixed bottom-6 left-1/2 -translate-x-1/2 bg-[#1a1d21] text-white text-xs px-6 py-3 rounded-full shadow-lg z-50" data-llama-id="271">Thanks, Kumar — we'll be in touch soon! <button onclick="this.parentElement.classList.add('hidden')" class="ml-3 underline" data-llama-id="272">Close</button></div>
+
+<script data-llama-id="273">
+document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('hidden'))
+</script>
 
 <!-- PostHog -->
 <script>
@@ -236,10 +308,278 @@ body{font-family:'Inter',sans-serif;color:#1a1d21}
         person_profiles: 'always',
         recordCrossOriginIframes: true,
     })
-    posthog.identify('13096', { email: 'kumaras@gmail.com', name: 'kumar', user_id: 13096, organization_id: 23595, plan: '' })
+
+      posthog.identify('13096', {
+        email: 'kumaras@gmail.com',
+        name: 'kumar',
+        user_id: 13096,
+        organization_id: 23595,
+        plan: ''
+      })
 </script>
+<script>
+(function() {
+  // ============================================================================
+  // LEO Page Builder - Iframe Communication Script
+  // ============================================================================
+  // This script handles postMessage communication for the LEO page builder system.
+  //
+  // IMPORTANT: Origin-Based Message Routing
+  // ========================================
+  // There are TWO iframe communication systems in LlamaPress that both use
+  // { source: 'leonardo' } messages:
+  //
+  // 1. LEONARDO (Full App Builder) - localhost:8000 -> localhost:3000
+  //    - Parent: LlamaBot/FastAPI at localhost:8000
+  //    - Child: Rails app at localhost:3000
+  //    - message_handler.js handles these (cross-origin)
+  //
+  // 2. LEO (Page Builder) - localhost:3000 -> localhost:3000
+  //    - Parent: /pages/:id/chat at localhost:3000
+  //    - Child: /pages/:id/preview at localhost:3000 (THIS PAGE)
+  //    - THIS SCRIPT handles these messages (same-origin)
+  //
+  // We distinguish between them by checking event.origin:
+  // - Same-origin (localhost:3000) = Leo -> respond HERE
+  // - Cross-origin (localhost:8000) = Leonardo -> ignore here, let message_handler.js handle it
+  // ============================================================================
 
-<!-- Shared header/footer loader -->
-<script src="js/include.js"></script>
+  // DEBUG: Log when this script runs
+  console.log("[page.html.erb] Script starting, will set view_path to: app/views/pages/preview.html.erb");
 
+  // Wrap in IIFE to avoid global scope pollution and redeclaration errors
+  if (window.leonardoScriptLoaded) {
+    console.log("[page.html.erb] Already loaded, skipping");
+    return;
+  }
+  window.leonardoScriptLoaded = true;
+
+  // Set page metadata from server-side variables (injected above)
+  // These come from Rails @view_path which contains the actual view file path
+  window.page_loaded_at = 1789871154.9345217;
+  window.request_path = "/pages/49147/preview";
+  window.view_path = "app/views/pages/preview.html.erb";
+  console.log("[page.html.erb] Set window.view_path =", window.view_path);
+
+  // Initialize full_html on DOMContentLoaded
+  window.addEventListener('DOMContentLoaded', () => {
+    window.full_html = document.documentElement.outerHTML;
+    console.log("[page.html.erb] Page metadata initialized:", {
+      request_path: window.request_path,
+      view_path: window.view_path,
+      page_loaded_at: window.page_loaded_at
+    });
+  });
+
+  // Also set full_html immediately if DOM is already loaded
+  if (document.readyState === 'loading') {
+    // DOMContentLoaded hasn't fired yet, wait for it
+  } else {
+    // DOM is already loaded
+    window.full_html = document.documentElement.outerHTML;
+    console.log("[page.html.erb] Page metadata initialized (DOM already loaded):", {
+      request_path: window.request_path,
+      view_path: window.view_path,
+      page_loaded_at: window.page_loaded_at
+    });
+  }
+
+  window.addEventListener("message", (event) => {
+      // Only process messages with source 'leonardo'
+      if (event.data.source !== 'leonardo') { return; }
+
+      // CRITICAL: Only respond to SAME-ORIGIN messages (from Leo chat at localhost:3000)
+      // Cross-origin messages (from Leonardo at localhost:8000) are handled by
+      // message_handler.js (loaded via importmap in application.js), not here.
+      // This prevents duplicate responses and ensures correct view_path values.
+      if (event.origin !== window.location.origin) {
+          console.log("[page.html.erb] Ignoring cross-origin message (handled by message_handler.js):", event.origin);
+          return;
+      }
+
+      console.log("[page.html.erb] Processing same-origin message from Leo:", event.data);
+
+      // Handle element selector commands
+      if (event.data.type === 'enable-element-selector') {
+          window.enableElementSelector();
+          return;
+      }
+
+      if (event.data.type === 'disable-element-selector') {
+          window.disableElementSelector();
+          return;
+      }
+
+      // Handle debug info request (this is the main message type Leonardo sends)
+      if (event.data.type === 'get_debug_info') {
+          // Ensure we have the most up-to-date HTML content
+          window.full_html = document.documentElement.outerHTML;
+
+          console.log("Sending debug info back to Leonardo:", {
+              request_path: window.request_path,
+              view_path: window.view_path,
+              page_loaded_at: window.page_loaded_at
+          });
+
+          // Validate that we have current data
+          if (!window.request_path || !window.view_path) {
+              console.warn("Missing request_path or view_path - page may not be fully loaded");
+          }
+
+          event.source.postMessage({
+              source: 'llamapress',
+              full_html: window.full_html,
+              request_path: window.request_path,
+              view_path: window.view_path,
+              page_loaded_at: window.page_loaded_at
+          }, event.origin);
+          return;
+      }
+
+      console.log("Unhandled message type:", event.data.type);
+  });
+
+  // Element Selector functionality
+  let elementSelectorEnabled = false;
+  let elementSelectorStyles = null;
+  let currentHighlightedElement = null;
+
+  window.enableElementSelector = function() {
+      if (elementSelectorEnabled) return;
+
+      elementSelectorEnabled = true;
+      console.log('Element selector enabled');
+
+      // Inject styles for hover highlighting
+      elementSelectorStyles = document.createElement('style');
+      elementSelectorStyles.id = 'element-selector-styles';
+      elementSelectorStyles.textContent = `
+          .element-selector-highlight {
+              outline: 2px solid #4CAF50 !important;
+              outline-offset: 2px !important;
+              background-color: rgba(76, 175, 80, 0.1) !important;
+              cursor: crosshair !important;
+          }
+          .element-selector-active * {
+              cursor: crosshair !important;
+          }
+      `;
+      document.head.appendChild(elementSelectorStyles);
+
+      // Mark body as active
+      document.body.classList.add('element-selector-active');
+
+      // Add event listeners
+      document.addEventListener('mousemove', handleElementSelectorMouseMove, true);
+      document.addEventListener('click', handleElementSelectorClick, true);
+  };
+
+  window.disableElementSelector = function() {
+      if (!elementSelectorEnabled) return;
+
+      elementSelectorEnabled = false;
+      console.log('Element selector disabled');
+
+      // Remove styles
+      if (elementSelectorStyles) {
+          elementSelectorStyles.remove();
+          elementSelectorStyles = null;
+      }
+
+      // Remove body class
+      document.body.classList.remove('element-selector-active');
+
+      // Remove highlight from current element
+      if (currentHighlightedElement) {
+          currentHighlightedElement.classList.remove('element-selector-highlight');
+          currentHighlightedElement = null;
+      }
+
+      // Remove event listeners
+      document.removeEventListener('mousemove', handleElementSelectorMouseMove, true);
+      document.removeEventListener('click', handleElementSelectorClick, true);
+  };
+
+  function handleElementSelectorMouseMove(event) {
+      const target = event.target;
+
+      if (!target || target.tagName === 'HTML' || target.tagName === 'BODY') {
+          return;
+      }
+
+      // Remove highlight from previous element
+      if (currentHighlightedElement && currentHighlightedElement !== target) {
+          currentHighlightedElement.classList.remove('element-selector-highlight');
+      }
+
+      // Add highlight to current target
+      target.classList.add('element-selector-highlight');
+      currentHighlightedElement = target;
+  }
+
+  function handleElementSelectorClick(event) {
+      event.preventDefault();
+      event.stopPropagation();
+
+      const target = event.target;
+
+      if (!target || target.tagName === 'HTML' || target.tagName === 'BODY') {
+          return;
+      }
+
+      // Extract text content for display
+      let textContent = extractElementText(target);
+
+      // Get the outerHTML for the LLM
+      let outerHTML = target.outerHTML;
+
+      // Send selected element data to parent
+      window.parent.postMessage({
+          source: 'element-selector',
+          type: 'element-selected',
+          text: textContent,
+          html: outerHTML
+      }, '*');
+
+      // Visual feedback
+      showSelectionFeedback(target);
+  }
+
+  function extractElementText(element) {
+      // Get text content and clean it up
+      let text = element.textContent || element.innerText || '';
+      text = text.trim();
+
+      // If text is too long, truncate it
+      if (text.length > 200) {
+          text = text.substring(0, 200) + '...';
+      }
+
+      // If element has no text, try to describe it
+      if (!text) {
+          const tagName = element.tagName.toLowerCase();
+          const className = element.className ? `.${element.className.split(' ')[0]}` : '';
+          const id = element.id ? `#${element.id}` : '';
+          text = `${tagName}${id}${className} element`;
+      }
+
+      return text;
+  }
+
+  function showSelectionFeedback(element) {
+      const originalOutline = element.style.outline;
+      const originalBackground = element.style.backgroundColor;
+
+      element.style.outline = '3px solid #4CAF50';
+      element.style.backgroundColor = 'rgba(76, 175, 80, 0.3)';
+
+      setTimeout(() => {
+          element.style.outline = originalOutline;
+          element.style.backgroundColor = originalBackground;
+      }, 300);
+  }
+
+  console.log("[page.html.erb] Leo iframe communication script loaded!");
+})();
+</script>
 </body></html>
